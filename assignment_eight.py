@@ -1,13 +1,13 @@
+#Anthony Fagiolo
+#December 7th, 2021
+#Basic GUI Calculator
 import tkinter as tk
 root = tk.Tk()
 root.title = "Calculator :)"
 
-#number
-
-
 #operator formulas
 def plus_func():
-    pass
+    answer = eval(entry.get()+numb_entry.get())
 
 def minus_func():
     pass
@@ -24,15 +24,62 @@ def exponet_func():
 def remainder_func():
     pass
 
+def equal_func():
+    pass
+
 #variables i need
 numb = tk.StringVar()
-plus = plus_func
-minus = minus_func
+answer = tk.IntVar()
 
-
+#formulas for numbers
 def one():
     entry = numb.get()
     entry += "1"
+    numb.set(entry)
+
+def two():
+    entry = numb.get()
+    entry += "2"
+    numb.set(entry)
+
+def three():
+    entry = numb.get()
+    entry += "3"
+    numb.set(entry)
+
+def four():
+    entry = numb.get()
+    entry += "4"
+    numb.set(entry)
+
+def five():
+    entry = numb.get()
+    entry += "5"
+    numb.set(entry)
+
+def six():
+    entry = numb.get()
+    entry += "6"
+    numb.set(entry)
+
+def seven():
+    entry = numb.get()
+    entry += "7"
+    numb.set(entry)
+
+def eight():
+    entry = numb.get()
+    entry += "8"
+    numb.set(entry)
+
+def nine():
+    entry = numb.get()
+    entry += "9"
+    numb.set(entry)
+
+def zero():
+    entry = numb.get()
+    entry += "0"
     numb.set(entry)
 
 #buttons for numbers
@@ -40,7 +87,7 @@ numb_button0 = tk.Button(root,text="0")
 numb_button0.grid(row=6, column=2)
 numb_button1 = tk.Button(root, text="1",command=one)
 numb_button1.grid(row=3 ,column=1 )
-numb_button2 = tk.Button(root, text="2")
+numb_button2 = tk.Button(root, text="2",)
 numb_button2.grid(row=3 ,column=2 )
 numb_button3 = tk.Button(root, text="3")
 numb_button3.grid(row=3 ,column=3 )
@@ -71,11 +118,11 @@ exponet_button.grid(row=5,column=4)
 remainder_button = tk.Button(root, text="%")
 remainder_button.grid(row=5,column=5)
 equals_button = tk.Button(root,text="=")
-equals_button.grid(row=6,column=4)
+equals_button.grid(row=6,column=4,columnspan=2)
 
 #entry field
 numb_entry = tk.Entry(root, textvariable=numb)
-numb_entry.grid(row=1,column=1)
+numb_entry.grid(row=1,column=1, columnspan=5)
 
 
 
