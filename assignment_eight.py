@@ -7,29 +7,42 @@ root.title = "Calculator :)"
 
 #operator formulas
 def plus_func():
-    answer = eval(entry.get()+numb_entry.get())
+    entry = numb.get()
+    entry += "+"
+    numb.set(entry)
 
 def minus_func():
-    pass
+    entry = numb.get()
+    entry += "-"
+    numb.set(entry)
 
 def multiply_func():
-    pass
+    entry = numb.get()
+    entry += "*"
+    numb.set(entry)
 
 def divide_func():
-    pass
+    entry = numb.get()
+    entry += "/"
+    numb.set(entry)
 
 def exponet_func():
-    pass
+    entry = numb.get()
+    entry += "**"
+    numb.set(entry)
 
 def remainder_func():
-    pass
+    entry = numb.get()
+    entry += "%"
+    numb.set(entry)
 
-def equal_func():
-    pass
+def equals_func():
+    e = numb.get()
+    answer = eval(e)
+    numb.set(answer)
 
 #variables i need
 numb = tk.StringVar()
-answer = tk.IntVar()
 
 #formulas for numbers
 def one():
@@ -83,41 +96,41 @@ def zero():
     numb.set(entry)
 
 #buttons for numbers
-numb_button0 = tk.Button(root,text="0")
+numb_button0 = tk.Button(root,text="0", command=zero)
 numb_button0.grid(row=6, column=2)
 numb_button1 = tk.Button(root, text="1",command=one)
 numb_button1.grid(row=3 ,column=1 )
-numb_button2 = tk.Button(root, text="2",)
+numb_button2 = tk.Button(root, text="2", command=two)
 numb_button2.grid(row=3 ,column=2 )
-numb_button3 = tk.Button(root, text="3")
+numb_button3 = tk.Button(root, text="3", command=three)
 numb_button3.grid(row=3 ,column=3 )
-numb_button4 = tk.Button(root, text="4")
+numb_button4 = tk.Button(root, text="4", command=four)
 numb_button4.grid(row=4 ,column=1 )
-numb_button5 = tk.Button(root, text="5")
+numb_button5 = tk.Button(root, text="5", command=five)
 numb_button5.grid(row=4 ,column=2 )
-numb_button6 = tk.Button(root, text="6")
+numb_button6 = tk.Button(root, text="6", command=six)
 numb_button6.grid(row=4 ,column=3 )
-numb_button7 = tk.Button(root, text="7")
+numb_button7 = tk.Button(root, text="7", command=seven)
 numb_button7.grid(row=5 ,column=1 )
-numb_button8 = tk.Button(root, text="8")
+numb_button8 = tk.Button(root, text="8", command=eight)
 numb_button8.grid(row=5,column=2 )
-numb_button9 = tk.Button(root, text="9")
+numb_button9 = tk.Button(root, text="9", command=nine)
 numb_button9.grid(row=5 ,column=3 )
 
 #buttons for arithmetic
-plus_button = tk.Button (root, text="+")
+plus_button = tk.Button (root, text="+", command=plus_func)
 plus_button.grid(row=3 , column=4 )
-minus_button = tk.Button (root, text="-")
+minus_button = tk.Button (root, text="-", command=minus_func)
 minus_button.grid(row=3, column=5)
-multiply_button = tk.Button(root, text="*")
+multiply_button = tk.Button(root, text="*", command=multiply_func)
 multiply_button.grid(row=4,column=4)
-divide_button = tk.Button(root, text="/")
+divide_button = tk.Button(root, text="/", command=divide_func)
 divide_button.grid(row=4,column=5)
-exponet_button = tk.Button(root, text="^")
+exponet_button = tk.Button(root, text="^", command=exponet_func)
 exponet_button.grid(row=5,column=4)
-remainder_button = tk.Button(root, text="%")
+remainder_button = tk.Button(root, text="%", command=remainder_func)
 remainder_button.grid(row=5,column=5)
-equals_button = tk.Button(root,text="=")
+equals_button = tk.Button(root,text="=", command=equals_func)
 equals_button.grid(row=6,column=4,columnspan=2)
 
 #entry field
